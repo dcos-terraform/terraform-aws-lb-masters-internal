@@ -19,6 +19,16 @@ variable "security_groups" {
   default     = []
 }
 
+variable "disable" {
+  description = "Do not create load balancer and its resources"
+  default     = false
+}
+
+variable "name_prefix" {
+  description = "Name Prefix"
+  default     = ""
+}
+
 variable "instances" {
   description = "List of instance IDs"
   type        = "list"
