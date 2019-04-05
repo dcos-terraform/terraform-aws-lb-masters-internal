@@ -8,7 +8,7 @@ EXAMPLE
 ```hcl
 module "dcos-lb-masters-internal" {
   source  = "terraform-dcos/lb-masters-internal/aws"
-  version = "~> 0.1"
+  version = "~> 0.2.0"
 
   cluster_name = "production"
 
