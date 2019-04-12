@@ -27,13 +27,13 @@ module "dcos-lb-masters-internal" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
+| instances | List of instance IDs | list | n/a | yes |
+| num\_instances | How many instances should be created | string | n/a | yes |
+| subnet\_ids | List of subnet IDs created in this network | list | n/a | yes |
 | disable | Do not create load balancer and its resources | string | `"false"` | no |
 | https\_acm\_cert\_arn | ACM certifacte to be used. | string | `""` | no |
-| instances | List of instance IDs | list | n/a | yes |
 | name\_prefix | Name Prefix | string | `""` | no |
-| num\_instances | How many instances should be created | string | n/a | yes |
 | security\_groups | Security Group IDs to use | list | `<list>` | no |
-| subnet\_ids | List of subnet IDs created in this network | list | n/a | yes |
 | tags | Add custom tags to all resources | map | `<map>` | no |
 
 ## Outputs
