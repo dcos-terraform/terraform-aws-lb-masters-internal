@@ -29,7 +29,7 @@ provider "aws" {}
 
 module "masters-internal" {
   source  = "dcos-terraform/lb/aws"
-  version = "~> 0.1.0"
+  version = "~> 0.0.1"
 
   providers = {
     aws = "aws"
