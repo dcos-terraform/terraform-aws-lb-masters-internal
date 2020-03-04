@@ -30,6 +30,7 @@ module "dcos-lb-masters-internal" {
 | instances | List of instance IDs | list | n/a | yes |
 | num\_instances | How many instances should be created | string | n/a | yes |
 | subnet\_ids | List of subnet IDs created in this network | list | n/a | yes |
+| adminrouter\_grpc\_proxy\_port |  | string | `"12379"` | no |
 | disable | Do not create load balancer and its resources | string | `"false"` | no |
 | https\_acm\_cert\_arn | ACM certifacte to be used. | string | `""` | no |
 | name\_prefix | Name Prefix | string | `""` | no |

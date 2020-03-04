@@ -44,6 +44,6 @@ variable "num_instances" {
 }
 
 variable "adminrouter_grpc_proxy_port" {
-    description = ""
-    default     = 12379
+  description = ""
+  default     = 12379
 }
