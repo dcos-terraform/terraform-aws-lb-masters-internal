@@ -42,3 +42,8 @@ variable "https_acm_cert_arn" {
 variable "num_instances" {
   description = "How many instances should be created"
 }
+
+variable "adminrouter_grpc_proxy_port" {
+  description = ""
+  default     = 12379
+}

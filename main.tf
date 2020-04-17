@@ -64,6 +64,10 @@ module "masters-internal" {
       port     = 8080
       protocol = "tcp"
     },
+    {
+      port     = "${var.adminrouter_grpc_proxy_port}"
+      protocol = "tcp"
+    },
   ]
 
   https_acm_cert_arn = "${var.https_acm_cert_arn}"
