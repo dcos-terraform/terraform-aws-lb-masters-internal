@@ -30,7 +30,7 @@ provider "aws" {
 }
 
 module "masters-internal" {
-  source = "dcos-terraform/lb/aws"
+  source = "../terraform-aws-lb"
 
   providers = {
     aws = aws
