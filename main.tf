@@ -10,7 +10,7 @@
  *```hcl
  * module "dcos-lb-masters-internal" {
  *   source  = "terraform-dcos/lb-masters-internal/aws"
- *   version = "~> 0.2.0"
+ *   version = "~> 0.3.0"
  *
  *   cluster_name = "production"
  *
@@ -30,7 +30,8 @@ provider "aws" {
 }
 
 module "masters-internal" {
-  source = "../terraform-aws-lb"
+  source  = "dcos-terraform/lb/aws"
+  version = "~> 0.3.0"
 
   providers = {
     aws = aws
