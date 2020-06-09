@@ -10,7 +10,7 @@
  *```hcl
  * module "dcos-lb-masters-internal" {
  *   source  = "terraform-dcos/lb-masters-internal/aws"
- *   version = "~> 0.2.0"
+ *   version = "~> 0.3.0"
  *
  *   cluster_name = "production"
  *
@@ -25,17 +25,19 @@
  *```
  */
 
-provider "aws" {}
+provider "aws" {
+  version = ">= 2.58"
+}
 
 module "masters-internal" {
   source  = "dcos-terraform/lb/aws"
-  version = "~> 0.2.0"
+  version = "~> 0.3.0"
 
   providers = {
-    aws = "aws"
+    aws = aws
   }
 
-  cluster_name = "${var.cluster_name}"
+  cluster_name = var.cluster_name
 
   internal = true
 
@@ -65,19 +67,19 @@ module "masters-internal" {
       protocol = "tcp"
     },
     {
-      port     = "${var.adminrouter_grpc_proxy_port}"
+      port     = var.adminrouter_grpc_proxy_port
       protocol = "tcp"
     },
   ]
 
-  https_acm_cert_arn = "${var.https_acm_cert_arn}"
+  https_acm_cert_arn = var.https_acm_cert_arn
   elb_name_format    = "int-%s"
-  instances          = ["${var.instances}"]
-  num_instances      = "${var.num_instances}"
-  security_groups    = ["${var.security_groups}"]
-  subnet_ids         = ["${var.subnet_ids}"]
-  internal           = true
-  disable            = "${var.disable}"
-  name_prefix        = "${var.name_prefix}"
-  tags               = "${var.tags}"
+  instances          = var.instances
+  num_instances      = var.num_instances
+  security_groups    = var.security_groups
+  subnet_ids         = var.subnet_ids
+  disable            = var.disable
+  name_prefix        = var.name_prefix
+  tags               = var.tags
 }
+
